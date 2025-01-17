@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Annotation Tool</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <p><img src="datahub.png" alt="Text Annotation Tool Image" style="float:right;width:180px;height:60px;"></p>
+            <h1>Text Annotation Tool</h1>
+        </div>
+
+        <!-- Step 1: Define Labels -->
+        <h2>Step 1: Define Labels</h2>
+        <input type="text" id="newLabel" placeholder="Enter a new label">
+        <button onclick="addLabel()">Add Label</button>
+        <ul id="labelList" class="label-list"></ul>
+
+        <!-- Step 2: Annotate Text -->
+        <h2>Step 2: Annotate Text</h2>
+        <textarea id="textInput" rows="5" style="width: 100%;"
+            placeholder="Enter the text you want to annotate..."></textarea>
+        <div>
+            <select id="labelDropdown">
+                <option value="">Select Label</option>
+            </select>
+            <button onclick="startSelectingText()">Select Text to Annotate</button>
+        </div>
+        <div id="annotatedText" class="annotation-output"></div>
+
+        <!-- Step 3: View and Download Annotations -->
+        <h2>Step 3: View and Download Annotations</h2>
+        <div id="annotationsOutput" class="annotation-output"></div>
+        <a id="downloadBtn" class="download-btn" href="#" download="annotations.txt">Download Annotations as Text</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
